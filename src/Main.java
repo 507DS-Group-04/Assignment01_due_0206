@@ -23,7 +23,7 @@ public class Main {
         long actualMemUsed=(afterUsedMem-beforeUsedMem) / (1024);
         long endTime = System.nanoTime();
         System.out.println("Took "+(endTime - startTime) + " ns");
-        System.out.println("for the realmemory is " + actualMemUsed + "kb");
+        System.out.println("for the real memory is " + actualMemUsed + "kb");
 
     }
 
