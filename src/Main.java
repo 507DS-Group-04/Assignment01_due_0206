@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
-        long beforeUsedTime;
+        long startTime = System.nanoTime();
+
         Scanner userInputGradeArr = new Scanner(System.in);
         System.out.println("please input a string of 10 students stored,use format like this: <1,2,3,4,5,6,7,8,9,10>");
         // TODO try catch the no formal input
@@ -20,7 +21,9 @@ public class Main {
         long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
         // totalMemory() is converted to bytes
         long actualMemUsed=(afterUsedMem-beforeUsedMem) / (1024);
-        System.out.println("for the realmemory is " + actualMemUsed);
+        long endTime = System.nanoTime();
+        System.out.println("Took "+(endTime - startTime) + " ns");
+        System.out.println("for the realmemory is " + actualMemUsed + "kb");
 
     }
 
