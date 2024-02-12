@@ -6,6 +6,9 @@ public class Assignment2OptionB {
         demo input
         * <div><</div>
         * */
+       long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+       long startTime = System.nanoTime();
+
         System.out.println(isHTMLMatched("""
                 <html>
                 <head>
@@ -18,6 +21,10 @@ public class Assignment2OptionB {
                                 
                 </body>
                 </html>"""));
+
+        long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+        long endTime = System.nanoTime ();
+        System.out.println("time is->" +  (endTime - startTime)/1000000 + "ms mem is=->" + (afterUsedMem - beforeUsedMem) + "bytes");
     }
 
     public static boolean isHTMLMatched(String html) {
