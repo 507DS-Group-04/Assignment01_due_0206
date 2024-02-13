@@ -17,7 +17,8 @@ public class Assignment2OptionC {
      process(n-1, towerB, towerA, towerC);
     }
     public static void main(String[] args) {
-        long startTime = System.nanoTime();
+        long beforeUsedMem = Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+        long beginTime = System.currentTimeMillis();
         int numDisk;
         Scanner disks = new Scanner(System.in);
         System.out.println("Type in number of disks: ");
@@ -25,8 +26,11 @@ public class Assignment2OptionC {
 
         process(numDisk, 'A', 'B', 'C');
 
-        long endTime = System.nanoTime();
-        System.out.println("The total steps: " + count + "\n" + "Took " + (endTime - startTime) + " ns");
+        long afterUsedMem = Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+        long actualMemUsed = (afterUsedMem - beforeUsedMem) / 1024;
+        long endTime = System.currentTimeMillis();
+        long timeUsed = endTime - beginTime;
+        System.out.println("The total steps: " + count + "\n" + "Took " + timeUsed + " ns" + "\n" + "for the real memory is " + actualMemUsed + "kb");
     }
 }
 
@@ -49,18 +53,4 @@ public class Assignment2OptionC {
 
 
 
-
-
-
-
-
-
-
-
-   //     StringBuilder reversed = new StringBuilder();
-    //    while (!stackmaster.isEmpty()) {
-   //         reversed.append(stackmaster.pop());
-   //     }
-    //    long endTime = System.nanoTime();
-       //System.out.println("The reversed string is " + reversed + "\n" + "Took " + (endTime - startTime) + " ns");
 
