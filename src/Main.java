@@ -35,22 +35,33 @@ public class Main {
 //        String stStr = reversed.stream().map(s -> s.toString()).collect(Collectors.joining(""));
 //        System.out.println(stStr);
 
+//        long startTime = System.nanoTime();
+//        String foo = "yunlong li";
+//        Stack<Character> stackmaster = new Stack<Character> ();
+//
+//        for (int i = 0; i < foo.length(); i++) {
+//            stackmaster.push(foo.charAt(i));
+//        }
+//
+//        StringBuilder reversed = new StringBuilder();
+//        while (!stackmaster.isEmpty()) {
+//            reversed.append(stackmaster.pop());
+//        }
+//        long endTime = System.nanoTime ();
+//        System.out.println("The reversed string is " + reversed+ "\n" + "Took " + (endTime - startTime) + " ns");
+
+
         long startTime = System.nanoTime();
-        String foo = "yunlong li";
-        Stack<Character> stackmaster = new Stack<Character> ();
 
-        for (int i = 0; i < foo.length(); i++) {
-            stackmaster.push(foo.charAt(i));
-        }
+        Assignment2OptionA StackMaster = new Assignment2OptionA();
+        String inputCorrectBrackets = "({})[]";
+        String inputWrongBrackets = "({})[]][";
+        System.out.println("The input format of brackets ({})[] are " + StackMaster.IsValidBracket(inputWrongBrackets));
+        System.out.println("The input format of brackets are ({})[]][" + StackMaster.IsValidBracket(inputCorrectBrackets));
 
-        StringBuilder reversed = new StringBuilder();
-        while (!stackmaster.isEmpty()) {
-            reversed.append(stackmaster.pop());
-        }
         long endTime = System.nanoTime ();
-        System.out.println("The reversed string is " + reversed+ "\n" + "Took " + (endTime - startTime) + " ns");
+        long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 
-
-
+        System.out.println("Took " + (endTime - startTime) + " ns");
     }
 }
