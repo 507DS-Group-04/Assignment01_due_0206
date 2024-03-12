@@ -24,17 +24,18 @@ public class Assignment5 {
         long startTime = System.nanoTime();
 
         TreeNode root = createcTree();
+        System.out.println(root);
         Scanner scanner = new Scanner(System.in);
         System.out.print("select a city: ");
         String cName = scanner.nextLine();
         int depth = findDepth(root, cName);
         int height = findHeight(root);
-        if (depth != -1) {
-            System.out.println("Depth  " + cName + ": " + depth);
-            System.out.println("Height: " + height);
-        } else {
-            System.out.println("not found");
+        if (depth == -1) {
+            System.out.println("not found node in the tree");
+            return;
         }
+        System.out.println("Depth  " + cName + ": " + depth);
+        System.out.println("Height: " + height);
 
         long endTime = System.nanoTime();
         long time = (endTime - startTime) / 1000000;
@@ -42,16 +43,16 @@ public class Assignment5 {
         System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ms");
     }
     public static TreeNode createcTree() {
-        TreeNode capital = new TreeNode("R");
-        TreeNode c1 = new TreeNode("C1");
-        TreeNode c2 = new TreeNode("C2");
-        TreeNode c3 = new TreeNode("C3");
-        TreeNode c4 = new TreeNode("C4");
-        TreeNode c5 = new TreeNode("C5");
-        TreeNode c6 = new TreeNode("C6");
-        TreeNode t1 = new TreeNode("t1");
-        TreeNode t2 = new TreeNode("t2");
-        TreeNode t3 = new TreeNode("t3");
+        TreeNode capital = new TreeNode("Beijing");
+        TreeNode c1 = new TreeNode("Shanghai");
+        TreeNode c2 = new TreeNode("Gansu");
+        TreeNode c3 = new TreeNode("Fujian");
+        TreeNode c4 = new TreeNode("Tianjin");
+        TreeNode c5 = new TreeNode("Chongqing");
+        TreeNode c6 = new TreeNode("Anhui");
+        TreeNode t1 = new TreeNode("Jingan");
+        TreeNode t2 = new TreeNode("Lanzhou");
+        TreeNode t3 = new TreeNode("Fuzhou");
 
         capital.addChild(c1);
         capital.addChild(c2);
