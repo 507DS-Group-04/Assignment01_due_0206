@@ -4,9 +4,10 @@ import java.util.LinkedList;
 * */
 public class Assignment4MoveElement {
     public static void main(String[] args) {
-        long startTime = System.nanoTime();
+
 
         LinkedList<String> lkList = new LinkedList<String>();
+        long startTime = System.nanoTime();
         lkList.add("N");
         lkList.add("Y");
         lkList.add("I");
@@ -20,8 +21,8 @@ public class Assignment4MoveElement {
         System.out.println(lkList);
 
         long endTime = System.nanoTime();
-        long time = (endTime - startTime) / 1000000;
-        long mem = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
-        System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ms");
+        long time = (endTime - startTime);
+        long mem = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024 ;
+        System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ns");
     }
 }

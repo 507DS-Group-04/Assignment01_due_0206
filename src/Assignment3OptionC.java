@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -20,8 +19,8 @@ public class Assignment3OptionC {
         }
 
         long endTime = System.nanoTime();
-        long time = (endTime - startTime) / 1000000;
-        long mem = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
-        System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ms");
+        long time = (endTime - startTime);
+        long mem = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) ;
+        System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ns");
     }
 }

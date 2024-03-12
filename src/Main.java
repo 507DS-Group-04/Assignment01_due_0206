@@ -1,9 +1,6 @@
-import java.util.Scanner;
-import java.util.Stack;
-import java.util.stream.Collectors;
-
 public class Main {
-    public static void main (String[] args) {
+    public int ak = 5;
+    public static int main (String[] args) {
 //        long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 //        long startTime = System.nanoTime();
 //
@@ -35,21 +32,22 @@ public class Main {
 //        String stStr = reversed.stream().map(s -> s.toString()).collect(Collectors.joining(""));
 //        System.out.println(stStr);
 
-        long startTime = System.nanoTime();
-        String foo = "yunlong li";
-        Stack<Character> stackmaster = new Stack<Character> ();
-
-        for (int i = 0; i < foo.length(); i++) {
-            stackmaster.push(foo.charAt(i));
-        }
-
-        StringBuilder reversed = new StringBuilder();
-        while (!stackmaster.isEmpty()) {
-            reversed.append(stackmaster.pop());
-        }
-        long endTime = System.nanoTime ();
-        System.out.println("The reversed string is " + reversed+ "\n" + "Took " + (endTime - startTime) + " ns");
-
+//        long startTime = System.nanoTime();
+//        String foo = "yunlong li";
+//        Stack<Character> stackmaster = new Stack<Character> ();
+//
+//        for (int i = 0; i < foo.length(); i++) {
+//            stackmaster.push(foo.charAt(i));
+//        }
+//
+//        StringBuilder reversed = new StringBuilder();
+//        while (!stackmaster.isEmpty()) {
+//            reversed.append(stackmaster.pop());
+//        }
+//        long endTime = System.nanoTime ();
+//        System.out.println("The reversed string is " + reversed+ "\n" + "Took " + (endTime - startTime) + " ns");
+        System.out.println("my name");
+        return 5;
 
 
     }
