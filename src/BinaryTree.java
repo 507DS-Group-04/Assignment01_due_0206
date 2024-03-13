@@ -1,3 +1,10 @@
+/*
+* Expectations:
+1. Implement the problems in Java.
+2. Submit your document containing
+             a. the snippets of the code.
+             b. runtime displays of the input data and the corresponding output.
+* */
 class Node {
     int key;
     Node left, right;
@@ -39,6 +46,8 @@ class BinaryTree {
 
     public static void main(String[] args)
     {
+        long startTime = System.nanoTime();
+
         BinaryTree StackMaster = new BinaryTree();
         StackMaster.root = new Node(1);
         StackMaster.root.left = new Node(2);
@@ -56,5 +65,11 @@ class BinaryTree {
         System.out.println(
                 "Postorder traversal of binary StackMaster is ");
         StackMaster.printPostorder(StackMaster.root);
+        System.out.println();
+
+        long endTime = System.nanoTime();
+        long time = (endTime - startTime) / 1000000;
+        long mem = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
+        System.out.println("memory requirement: "+ mem +"KB and CPU execution time " + time + " ms");
     }
 }
