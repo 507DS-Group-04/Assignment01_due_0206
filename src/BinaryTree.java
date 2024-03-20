@@ -1,9 +1,7 @@
 /*
-* Expectations:
-1. Implement the problems in Java.
-2. Submit your document containing
-             a. the snippets of the code.
-             b. runtime displays of the input data and the corresponding output.
+In-class activity 3: Traverse a Tree @ Mar 20
+Due Wednesday by 11:59pm Points 2 Submitting a file upload
+Traverse the following tree and show the results of In-Order, Pre-Order, Post-Order traversals.
 * */
 class Node {
     int key;
@@ -11,8 +9,8 @@ class Node {
 
     public Node(int item)
     {
-        key = item;
-        left = right = null;
+        this.key = item;
+        this.left = right = null;
     }
 }
 
@@ -49,11 +47,21 @@ class BinaryTree {
         long startTime = System.nanoTime();
 
         BinaryTree StackMaster = new BinaryTree();
-        StackMaster.root = new Node(1);
-        StackMaster.root.left = new Node(2);
-        StackMaster.root.right = new Node(3);
-        StackMaster.root.left.left = new Node(4);
-        StackMaster.root.left.right = new Node(5);
+        StackMaster.root = new Node(25);
+        StackMaster.root.left = new Node(15);
+        StackMaster.root.left.left = new Node(10);
+        StackMaster.root.left.left.left = new Node(4);
+        StackMaster.root.left.left.right = new Node(12);
+        StackMaster.root.left.right = new Node(22);
+        StackMaster.root.left.right.left = new Node(18);
+        StackMaster.root.left.right.right = new Node(24);
+        StackMaster.root.right = new Node(50);
+        StackMaster.root.right.left = new Node(35);
+        StackMaster.root.right.left.left = new Node(31);
+        StackMaster.root.right.left.right = new Node(44);
+        StackMaster.root.right.right = new Node(70);
+        StackMaster.root.right.right.left = new Node(66);
+        StackMaster.root.right.right.right = new Node(90);
         System.out.println(
                 "Inorder traversal of binary StackMaster is ");
         StackMaster.printInorder(StackMaster.root);
